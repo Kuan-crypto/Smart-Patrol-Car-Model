@@ -44,3 +44,10 @@ thop>=0.1.1  # FLOPs computation
 
 # HUB -----------------------------------------
 GitPython>=3.1.24
+
+#additional coding
+fastapi => 0.116.1
+uvicorn => 0.35.0
+sqlalchemy => 2.0.43
+telebot => 0.0.1
+google.generativeai => 0.8.5

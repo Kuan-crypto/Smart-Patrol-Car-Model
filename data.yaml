@@ -1,0 +1,13 @@
+train: /Users/kuan/Desktop/FirstProject/yolo-V8/data/train/images
+val: /Users/kuan/Desktop/FirstProject/yolo-V8/data/valid/images
+test: /Users/kuan/Desktop/FirstProject/yolo-V8/data/test/images
+
+nc: 5
+names: ['Non_Pedestrain', 'Opp_Direction', 'Sitting', 'Sleeping', 'Standing']
+
+roboflow:
+  workspace: imamm
+  project: abnormal-behavior
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/imamm/abnormal-behavior/dataset/1

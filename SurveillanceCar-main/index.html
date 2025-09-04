@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>即時影像控制台</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="bar">
+          <div class="title">
+            <span class="dot" id="dot"></span>即時影像控制台
+          </div>
+          <div class="status" id="status">尚未連線</div>
+          <div class="grow"></div>
+          <span class="select" aria-label="串流模式">MJPEG</span>
+        </div>
+      </header>
+
+      <main>
+        <div class="grid">
+          <section class="panel">
+            <div class="video-card">
+              <div class="video-stage">
+                <video id="videoEl" playsinline muted></video>
+                <img id="mjpegEl" alt="MJPEG Stream" />
+              </div>
+              <div class="overlay" id="pausedOverlay"><div>⏸ 已暫停</div></div>
+            </div>
+            <div class="ctrl">
+              <button id="connectBtn" class="btn primary">▶連線並播放</button>
+              <button id="playPauseBtn" class="btn" disabled>
+                ⏯播放 / 暫停
+              </button>
+              <button id="fsBtn" class="btn ghost" disabled>⛶ 全螢幕</button>
+              <div class="grow"></div>
+              <input
+                id="endpointInput"
+                class="input"
+                style="min-width: 260px"
+                placeholder=" MJPEG 端點"
+              />
+            </div>
+          </section>
+
+          <aside class="panel">
+            <div class="kv">
+              <div><span>連線狀態</span><b id="stateLabel">idle</b></div>
+              <div><span>模式</span><b id="modeLabel">WebRTC</b></div>
+              <div><span>解析度</span><b id="resLabel">—</b></div>
+              <div><span>錯誤</span><b id="errorLabel">—</b></div>
+              <hr style="border-color: rgba(255, 255, 255, 0.08)" />
+
+              <div class="pad">
+                <div class="pad-row">
+                  <button
+                    class="btn pad-btn"
+                    data-cmd="drive"
+                    data-v="0.6"
+                    data-w="0"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    class="btn pad-btn"
+                    data-cmd="drive"
+                    data-v="0"
+                    data-w="1"
+                  >
+                    ←
+                  </button>
+                  <button
+                    class="btn pad-btn stop"
+                    data-cmd="drive"
+                    data-v="0"
+                    data-w="0"
+                  >
+                    ⏹
+                  </button>
+                  <button
+                    class="btn pad-btn"
+                    data-cmd="drive"
+                    data-v="0"
+                    data-w="-1"
+                  >
+                    →
+                  </button>
+                  <button
+                    class="btn pad-btn"
+                    data-cmd="drive"
+                    data-v="-0.6"
+                    data-w="0"
+                  >
+                    ↓
+                  </button>
+                </div>
+              </div>
+
+              <div class="stack">
+                <button id="snapBtn" class="btn">截圖</button>
+              </div>
+            </div>
+          </aside>
+
+          <section class="panel gallery-panel">
+            <div class="ctrl">
+              <div class="title">
+                圖庫
+                <span
+                  id="galleryCount"
+                  class="muted"
+                  style="font-weight: 400; font-size: 14px; margin-left: 8px"
+                  >(0)</span
+                >
+              </div>
+              <div class="grow"></div>
+              <button id="clearGalleryBtn" class="btn ghost">清空圖庫</button>
+            </div>
+            <div id="gallery" class="gallery-grid"></div>
+          </section>
+        </div>
+      </main>
+
+      <footer>@2025 第二組製作</footer>
+    </div>
+  </body>
+</html>

@@ -31,7 +31,7 @@ jobs:
             model: yolov8n
             torch: '1.7.0'  # min torch version CI https://pypi.org/project/torchvision/
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}

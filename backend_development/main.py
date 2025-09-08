@@ -31,13 +31,15 @@ GENAI_KEY = os.getenv("genai_APIKEY")
 
 COM_IP = os.getenv("API_IP")
 
+MAIN_IP = os.getenv("MAIN_IP")
+
 # FastAPI 初始化 
 app = FastAPI()
 
 # CORS 
 origins = [
-    "https://你的帳號.github.io",  # GitHub Pages 網址
-    COM_IP,       # 本地開發
+    "https://Kuan-crypto.github.io/Smart-Patrol-Car-Model",  # GitHub Pages 網址
+    MAIN_IP,       # 本地開發
 ]
 app.add_middleware(
     CORSMiddleware,

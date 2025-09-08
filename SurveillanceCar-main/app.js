@@ -1,6 +1,6 @@
 (() => {
   // ===== Config & Defaults =====
-  const DEFAULT_MJPEG = "http://192.168.0.131:8000/stream";
+  const DEFAULT_MJPEG = "http://192.168.0.141:8000/stream";
   const CONFIG = {
     mode: "mjpeg",
     mjpegUrl:
